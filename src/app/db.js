@@ -1,7 +1,6 @@
 const { Pool } = require("pg");
 const dotenv = require("dotenv");
 dotenv.config("./.env");
-console.log(process.env.DB_PASSWORD);
 const pool = new Pool({
     user: "bot",
     host: "192.168.1.105",
