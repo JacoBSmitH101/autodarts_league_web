@@ -1,6 +1,7 @@
 // src/app/tournaments/page.js
 "use client";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 export default function Tournaments() {
     const [tournaments, setTournaments] = useState([]);
@@ -16,6 +17,9 @@ export default function Tournaments() {
 
     return (
         <div>
+            <Head>
+                <title>(Unoffical) Autodarts League</title>
+            </Head>
             <h1>Tournaments</h1>
             <ul>
                 {tournaments.map((tournament) => (

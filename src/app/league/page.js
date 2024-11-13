@@ -3,7 +3,10 @@
 
 import React from "react";
 import LeagueTable from "../components/LeagueTable";
-
+import Head from "next/head";
+export const metadata = {
+    title: "Tournaments | My App",
+};
 const LeaguePage = () => {
     // Define columns for the table
     const columns = React.useMemo(
@@ -158,27 +161,32 @@ const LeaguePage = () => {
     );
 
     return (
-        <div className="w-full flex flex-col items-center text-center bg-gray-900 min-h-screen">
-            <div className="w-full flex justify-center py-6">
-                <h1 className="text-2xl font-semibold bg-blue-900 text-white py-3 px-6 rounded-full w-1/4">
-                    League Standings
-                </h1>
-            </div>
-            <div className="w-full flex justify-center pt-10 space-x-5">
-                {/* Division 1 */}
-                <div className="flex flex-col items-center">
-                    <span className="text-sm font-semibold bg-blue-700 text-white py-1 px-4 rounded-full mb-3">
-                        Division 1
-                    </span>
-                    <LeagueTable columns={columns} data={data.slice(0, 5)} />
+        <div>
+            <div className="w-full flex flex-col items-center text-center bg-gray-900 min-h-screen">
+                <div className="w-full flex justify-center py-6">
+                    <h1 className="text-2xl font-semibold bg-blue-900 text-white py-3 px-6 rounded-full w-1/4">
+                        League Standings
+                    </h1>
                 </div>
+                <div className="w-full flex justify-center pt-10 space-x-5">
+                    {/* Division 1 */}
+                    <div className="flex flex-col items-center">
+                        <span className="text-sm font-semibold bg-blue-700 text-white py-1 px-4 rounded-full mb-3">
+                            Division 1
+                        </span>
+                        <LeagueTable
+                            columns={columns}
+                            data={data.slice(0, 5)}
+                        />
+                    </div>
 
-                {/* Division 2 */}
-                <div className="flex flex-col items-center">
-                    <span className="text-sm font-semibold bg-blue-700 text-white py-1 px-4 rounded-full mb-3">
-                        Division 2
-                    </span>
-                    <LeagueTable columns={columns} data={data.slice(5)} />
+                    {/* Division 2 */}
+                    <div className="flex flex-col items-center">
+                        <span className="text-sm font-semibold bg-blue-700 text-white py-1 px-4 rounded-full mb-3">
+                            Division 2
+                        </span>
+                        <LeagueTable columns={columns} data={data.slice(5)} />
+                    </div>
                 </div>
             </div>
         </div>
